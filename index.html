@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>The Food and Wine App</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta name="[app name]" meta description ="Find dinner and drinks">
+
+	<link href="main.css" type="text/css" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans|Noto+Serif" rel="stylesheet">
+</head>
+<body>
+
+	<header>
+		<h1>Name of app</h1>
+	</header>
+
+	<main>
+		<section role="">
+		<h2>Find Dinner and Wine</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		</section>
+
+		<section role="form" class ="question">
+				<form>
+					<fieldset>
+					<legend class =""> </legend>
+							
+								<input type = "radio" value="${currentQuestion.answers[0]}" name= "answer" id= "answer1" >
+								<label for="answer1" id= "ans1" class="answer-choice">
+								 ${currentQuestion.answers[0]} </label>
+							
+								<input type = "radio" value="${currentQuestion.answers[1]}" name= "answer"  id = "answer2" >
+								<label for="answer2" id= "ans2" class = "answer-choice" >
+								${currentQuestion.answers[1]} 
+							    </label>
+							
+
+							<button type="submit" class="submit-button"> submit</button>
+						</fieldset>
+				</form>
+
+		
+	</main>
+
+	<footer>
+	</footer>
+
+</body>
+</html>
