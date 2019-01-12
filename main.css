@@ -1,4 +1,3 @@
-body {
-	font-family: 'Open Sans', sans-serif;
-	color: #1C2321;
+.hidden {
+	display: none;
 }
