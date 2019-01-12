@@ -9,6 +9,8 @@
 	<link href="main.css" type="text/css" rel="stylesheet">
 
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans|Noto+Serif" rel="stylesheet">
+
+	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -22,24 +24,25 @@
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 		</section>
 
-		<section role="form" class ="question">
-				<form>
-					<fieldset>
-					<legend class =""> </legend>
-							
-								<input type = "radio" value="${currentQuestion.answers[0]}" name= "answer" id= "answer1" >
-								<label for="answer1" id= "ans1" class="answer-choice">
-								 ${currentQuestion.answers[0]} </label>
-							
-								<input type = "radio" value="${currentQuestion.answers[1]}" name= "answer"  id = "answer2" >
-								<label for="answer2" id= "ans2" class = "answer-choice" >
-								${currentQuestion.answers[1]} 
-							    </label>
-							
+		<div id="search-by-params">
+			<form id="parm-search">
+				<h3>Search for Recipes</h3>
+			</form>
+		</div>
 
-							<button type="submit" class="submit-button"> submit</button>
-						</fieldset>
-				</form>
+
+		<div id="search-by-random">
+			<form id="random-search">
+				<h3>Find a Random Recipe</h3>
+				  <label id='random-recipe-search'>Enter Tag: <input type='text' id='random-recipe' placeholder='Ex: FL, GA, CA'></label><br/>
+            		<button type='submit'>submit</button>
+			</form>
+		</div>
+
+		<!--goal: display recipe detail from SBR-->
+
+		<!--<div results>-->
+ 	<script src="index.js"></script>
 
 		
 	</main>
