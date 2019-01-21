@@ -2,16 +2,18 @@
 function displayRandom(result) {
 	console.log(result.recipes[0]);
 	$('.results').removeClass('hidden');
-  $('#search-by-wine').removeClass('hidden-wine');
 	$('.random-results').append(`<h4>${result.recipes[0].title}</h4>
 		<img src="${result.recipes[0].image}" class="results-img"><br>
     <p><a href="${result.recipes[0].sourceUrl}">Read detailed instructions at "${result.recipes[0].sourceName}."</a>`)
 	//analyzed instructions + ingredients
 }
 
-function displaySearch() {
+function displayParam(result) {
 	//display primary search
-   $('#search-by-wine').removeClass('hidden-wine');
+  console.log(JSON.stringify(result));
+   $('.results').removeClass('hidden');
+    appendParam(result);
+  //analyzed instructions + ingredients
 }
 
 function displayWine(result) {
@@ -25,6 +27,9 @@ function appendWineHTML(wine){
   $('#wine-results').append(`<h4>${wine.title}</h4><img src="${wine.imageUrl}" class="wine-img"><p>${wine.description}</p><p>Price: ${wine.price}</p>`)
 }
 
+function appendParam(food){
+  $('#param-results').append(`<h4>${food.title}</h4><img src="${food.image}" class="results-img"></p>`)
+}
 
 
 //perform searches
@@ -46,9 +51,39 @@ function searchRandom() {
 });
 }
 
-function searchStandard() {
+function searchParam() {
 	//see above for a guide
+  $.ajax({ 
+   type : "GET", 
+   dataType: "json",
+   url : `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?number=1&offset=0&query=burger"`, 
+   beforeSend: function(xhr){xhr.setRequestHeader('X-RapidAPI-Key', 'fbf613818dmsh4d46ff50d583636p1e4b42jsn8c77729e63e4');},
+   success : function(result) { 
+      searchID();
+
+   }, 
+   error : function(result) { 
+    alert("there's an error")
+   } 
+});
 }
+
+function searchID(result) {
+  $.ajax({ 
+   type : "GET", 
+   dataType: "json",
+   url : `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/262682/information`, 
+   beforeSend: function(xhr){xhr.setRequestHeader('X-RapidAPI-Key', 'fbf613818dmsh4d46ff50d583636p1e4b42jsn8c77729e63e4');},
+   success : function(result) { 
+       displayParam(result);
+
+   }, 
+   error : function(result) { 
+    alert("there's an error")
+   } 
+});
+};
+
 
 function searchWine() {
 	let wine = $("#wine-type option:selected").val();
@@ -103,7 +138,6 @@ function submitRandomForm() {
 	$('#random-search').submit(event => {
     event.preventDefault();
     searchRandom();
-    $('#random-results').empty();
     $('#param-search-button').addClass('hidden')
     $('#random-search-button').addClass('hidden')
     $('#search-by-random').addClass('hidden')
@@ -114,7 +148,11 @@ function submitRandomForm() {
 function submitSearch() {
 	$('#param-search').submit(event => {
     event.preventDefault();
-    alert("clicked");
+    searchParam();
+    $('#param-search-button').addClass('hidden')
+    $('#random-search-button').addClass('hidden')
+    $('#search-by-params').addClass('hidden')
+    $('#main-paragraph').addClass('hidden')
     
   });
 }
