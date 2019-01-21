@@ -1,3 +1,107 @@
+
+body {
+	background-color: white;
+	margin: auto;
+    width: 70%;
+    border-radius: 5px;
+    padding-top: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    min-width: 250px;
+    font-family: 'Noto Sans', sans-serif;
+    max-width: 500px;
+}
+
+/*search buttons*/
+.search-button {
+	display: block;
+	margin: 0 auto;
+	width: 100%;
+	height: 50px;
+	background-color: gray;
+	-webkit-appearance: none;
+	border: 0px;
+	margin-top: 10px;
+	border-radius: 3px;
+}
+
+/*search checkbox*/
+input[type=checkbox]{
+	-webkit-appearance: none;
+	margin-top: 30px;
+}
+
+.random-recipe {
+	display: inline;
+	background: gray;
+	padding: 10px;
+	border-radius:3px;
+	height: 20px;
+	outline:none;
+	vertical-align: center;
+	padding-top: 10px;
+}
+
+.random-recipe:hover {
+	background: #706656;
+	color: #efe5d5;
+}
+
+
+input[type=checkbox]:checked+label {
+  background: #706656;
+  color: #efe5d5;
+}
+
+label {
+    cursor: pointer;
+}
+
+/*hidden sections*/
 .hidden {
 	display: none;
 }
+
+.hidden-wine {
+	display: none;
+}
+
+.hidden-random {
+	display: none;
+}
+
+.hidden-param {
+	display: none;
+}
+
+
+/*searches*/
+#random-results {
+	background-color: gray;
+	padding: 4%;
+	border-radius:5px;
+}
+
+#random-search-submit {
+	margin-top: 20px;
+	-webkit-appearance: none;
+	border: 0px;
+	height: 30px;
+	background-color: gray;
+	border-radius: 3px;
+	padding: 10px;
+	
+}
+
+
+
+/*results*/
+.results-img {
+	width: 75%;
+}
+
+
+
+
+
+

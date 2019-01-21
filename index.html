@@ -8,44 +8,84 @@
 
 	<link href="main.css" type="text/css" rel="stylesheet">
 
-	<link href="https://fonts.googleapis.com/css?family=Noto+Sans|Noto+Serif" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Dancing+Script|Roboto" rel="stylesheet">
 
 	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 </head>
 <body>
 
 	<header>
-		<h1>Name of app</h1>
+		<h1>Dine.</h1>
 	</header>
 
 	<main>
 		<section role="">
-		<h2>Find Dinner and Wine</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<h2>Have a date? Throwing a party? Hungry? Use Dine.</h2>
+		<p> Easily find food and wine with our advanced recipe search, or a random recipe search, and pick your matching wine! What are you waiting for? Get started now!</p>
 		</section>
 
-		<div id="search-by-params">
-			<form id="parm-search">
-				<h3>Search for Recipes</h3>
-			</form>
+		<div class="results hidden">
+			<div id="param-results"></div>
+			<div id="random-results"></div>
+			<div id="wine-results"></div>
+					
 		</div>
 
 
-		<div id="search-by-random">
-			<form id="random-search">
-				<h3>Find a Random Recipe</h3>
-				  	<input type='checkbox' value="vegetarian" class='random-recipe' name="random">vegetarian</label><br/>
-				  		<input type='checkbox' value="vegan" class='random-recipe' name="random">vegan</label><br/>
-				  		<input type='checkbox' value="glutenfree" class='random-recipe' name="random">Gluten Free</label><br/>
-				  		<input type='checkbox' value="whole30" class='random-recipe' name="random">Whole 30</label><br/>
-				  		<input type='checkbox' value="veryhealthy" class='random-recipe' name="random">Healthy</label><br/>
-				  	<input type='checkbox' value="keto" class='random-recipe' name="random">keto</label><br/>
-			
-            		<button type='submit' id="random-search-button">submit</button>
+		<button role="button" aria-pressed="false" id="param-search-button" class="search-button">Search for Recipes</button> </h3> 
+		<div id="search-by-params"  class="hidden">
+				<form id="param-search">
+					Choose a Type:
+					<select name="Type">
+						  <option value="main+course">Main</option>
+						  <option value="side+dish">Side Dish</option>
+						  <option value="breakfast">Breakfast</option>
+						  <option value="dessert">Dessert</option>
+						  <option value="Appetizer">Appetizer</option>
+						  <option value="Salad">Salad</option>
+						  <option value="Soup">Soup</option>
+					</select>
+
+					<!--African, chinese, japanese, korean, vietnamese, thai, indian, british, irish, french, italian, mexican, spanish, middle eastern, jewish, american, cajun, southern, greek, german, nordic, eastern european, caribbean, or latin american.-->
+
+					<!--pescetarian, vegan, and vegetarian.-->
+					Dietary Restriction: 
+					<select name="restriction">
+						  <option value="pescetarian">Pescetarian</option>
+						  <option value="vegan">Vegan</option>
+						  <option value="vegetarian">Vegetarian</option>
+						  <option value="kosher">Kosher</option>
+						  <option value="halal">Halal</option>
+					</select>
+
+					<!--exclude (textbox): dairy, egg, gluten, peanut, sesame, seafood, shellfish, soy, sulfite, tree nut, and wheat.-->
+					Intolerances, and allergies:
+					<input type="text" placeholder="e.g. shellfish, tree nut">
+
+					<!--number of results-->
+				<button type='submit' id="param-search-button">submit</button>
+				</form>
+			 </div>
+
+
+		<button role="button" aria-pressed="false" id="random-search-button" class="search-button">Find a Random Recipe</button> </h3> 
+		<div id="search-by-random" class="hidden">
+			<form id="random-search" >
+				  	<input type='checkbox' value="vegetarian" name="random" id="vegetarian">
+				  	<label class="random-recipe" for="vegetarian"">
+								 Vegetarian </label>
+					<input type='checkbox' value="vegan"  name="random" id="vegan">
+				  	<label class="random-recipe" for="vegan">
+								 Vegan </label>
+					<input type='checkbox' value="keto" name="random" id="keto">
+				  	<label class="random-recipe" for="keto">
+								 Keto </label> <BR>
+            		<button type='submit' id="random-search-submit">submit</button>
 			</form>
 		</div>
 
-		<div id="search-by-wine">
+		<!--Turn this into a drop down-->
+		<div id="search-by-wine" class="hidden-wine">
 			<form id="wine-search">
 				<h3>Find a Wine</h3>
 					<h4>White Wine</h4>
@@ -66,22 +106,16 @@
 				  	<!--other-->
 				  	<input type='radio' value="sparklingwine" class='wine-label' name="wine">Sparkling Wine</label><br/>
 				  	<input type='radio' value="rose" class='wine-label' name="wine">Rose</label><br/>
+
+				  	<!--Nice to add feature: wine price max-->
 			
             		<button type='submit' id="wine-search-button">submit</button>
 
-            		<!--Nice to add feature: wine price-->
+            		
 			</form>
 		</div>
 
 
-
-
-		<div class="hidden results">
-				<h4>Here are your Results</h4>
-				<div id="random-results">
-					
-				</div>
-			</div>
 
 		<!--goal: display recipe detail from SBR-->
 
