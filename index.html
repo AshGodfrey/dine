@@ -3,18 +3,14 @@
 <head>
 	<title>The Food and Wine App</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
 	<meta name="[app name]" meta description ="Find dinner and drinks">
-
 	<link href="main.css" type="text/css" rel="stylesheet">
-
 	<link href="https://fonts.googleapis.com/css?family=Dancing+Script|Roboto" rel="stylesheet">
-
 	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 </head>
 <body>
-	<div id="main"
-	
+
+	<div id="main">
 	<header>
 		<h1>Dine.</h1>
 	</header>
@@ -24,17 +20,11 @@
 		<p class="white" id="main-paragraph"> Easily find food and wine with our advanced recipe search, or a random recipe search, and pick your matching wine! What are you waiting for? Get started now!</p>
 
 		<div class="results hidden">
-			<div id="param-results"></div>
-			<div class="random-results results"></div>
-			<div id="wine-results"></div>		
-		</div>
-
-		<div class="results hidden">
 			<button role="button" aria-pressed="false" id="wine-search-expand" class="search-button">Find a Wine</button> </h3> 
 				<!--Turn this into a drop down-->
 				<div id="search-by-wine" class="hidden">
 					<form id="wine-search">
-							<select id="wine-type" name="Type">
+							<select id="wine-type" name="Type" id="wine-drop-down">
 							<!--whites-->
 							  <option value="riesling">Riesling</option>
 							  <option value="pinotgris">Pinot Gris</option>
@@ -52,15 +42,11 @@
 
 						  	<!--Nice to add feature: wine price max-->
 					
-		            		<button type='submit' id="wine-search-button">submit</button>
+		            		<button type='submit' id="wine-search-button" class="search-submit">submit</button>
 					</form>
 					</div>
 				<button role="button" aria-pressed="false" id="search-again" class="search-button">Search Again</button> </h3> 
 		</div>
-
-
-
-
 
 		<button role="button" aria-pressed="false" id="param-search-button" class="search-button">Search for Recipes</button> </h3> 
 		<div id="search-by-params"  class="hidden white">
@@ -100,14 +86,18 @@
 			</form>
 		</div>
 
+		<div class="results hidden">
+			<div id="param-results"></div>
+			<div class="random-results results"></div>
+			<div id="wine-results"></div>		
+		</div>
+
 	
  	<script src="index.js"></script>
 
 		
 	</main>
 
-	<footer>
-	</footer>
 </div>
 </body>
 </html>

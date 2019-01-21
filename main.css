@@ -169,6 +169,16 @@ label {
    width: 40px;
 }
 
+#wine-drop-down { 
+   border: 0px;
+   border-radius: 0px;
+   height: 20px;
+   width: 100px;
+    display:inline-block;
+    margin-left: 15px;       /* This is when the drop down box appears */
+    position: relative;
+}
+
 
 /*media queries*/
 @media only screen and (min-width: 1000px) {

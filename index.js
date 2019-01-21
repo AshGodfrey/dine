@@ -151,6 +151,8 @@ function submitRandomForm() {
     $('#random-search-button').addClass('hidden')
     $('#search-by-random').addClass('hidden')
     $('#main-paragraph').addClass('hidden')
+    $('body').css("background-image","none")
+    $('body').css("background-color","#5A7D7C")
   });
 }
 
@@ -162,6 +164,8 @@ function submitSearch() {
     $('#random-search-button').addClass('hidden')
     $('#search-by-params').addClass('hidden')
     $('#main-paragraph').addClass('hidden')
+    $('body').css("background-image","none")
+    $('body').css("background-color","#5A7D7C")
     
   });
 }
