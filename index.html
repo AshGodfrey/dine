@@ -13,27 +13,63 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 </head>
 <body>
-
+	<div id="main"
+	
 	<header>
 		<h1>Dine.</h1>
 	</header>
 
 	<main>
 		<section role="">
-		<h2>Have a date? Throwing a party? Hungry? Use Dine.</h2>
-		<p> Easily find food and wine with our advanced recipe search, or a random recipe search, and pick your matching wine! What are you waiting for? Get started now!</p>
+		<h2>Date? Party? Hungry? Use Dine.</h2>
+		<p class="white" id="main-paragraph"> Easily find food and wine with our advanced recipe search, or a random recipe search, and pick your matching wine! What are you waiting for? Get started now!</p>
 		</section>
 
 		<div class="results hidden">
 			<div id="param-results"></div>
-			<div id="random-results"></div>
-			<div id="wine-results"></div>
+			<div class="random-results results"></div>
+			<div id="wine-results">
+			</div>
 					
 		</div>
 
+		<div class="results hidden">
+			<button role="button" aria-pressed="false" id="wine-search-expand" class="search-button">Find a Wine</button> </h3> 
+				<!--Turn this into a drop down-->
+				<div id="search-by-wine" class="hidden">
+					<form id="wine-search">
+							<select id="wine-type" name="Type">
+							<!--whites-->
+							  <option value="riesling">Riesling</option>
+							  <option value="pinotgris">Pinot Gris</option>
+							  <option value="sauvignon-blanc">Sauvignon Blanc</option>
+							  <option value="chardonnay">Chardonnay</option>
+							<!--reds-->
+							 <option value="pinotnoir">Pinot Noir</option>
+							  <option value="zinfandel">Zinfandel</option>
+							  <option value="syrah">Syrah</option>
+							  <option value="cabernetsauvignon">Cabernet Sauvignon</option>
+							<!--other-->
+							 <option value="sparklingwine">Sparkling Wine</option>
+							  <option value="Rose">Rose</option>
+							</select>
+
+						  	<!--Nice to add feature: wine price max-->
+					
+		            		<button type='submit' id="wine-search-button">submit</button>
+					</form>
+				</div>
+
+			<button role="button" aria-pressed="false" id="search-again" class="search-button">Search Again</button> </h3> 
+
+		</div>
+
+
+
+
 
 		<button role="button" aria-pressed="false" id="param-search-button" class="search-button">Search for Recipes</button> </h3> 
-		<div id="search-by-params"  class="hidden">
+		<div id="search-by-params"  class="hidden white">
 				<form id="param-search">
 					Choose a Type:
 					<select name="Type">
@@ -69,8 +105,9 @@
 
 
 		<button role="button" aria-pressed="false" id="random-search-button" class="search-button">Find a Random Recipe</button> </h3> 
-		<div id="search-by-random" class="hidden">
+		<div id="search-by-random" class="hidden white">
 			<form id="random-search" >
+				Select a Diet (Optional):<br>
 				  	<input type='checkbox' value="vegetarian" name="random" id="vegetarian">
 				  	<label class="random-recipe" for="vegetarian"">
 								 Vegetarian </label>
@@ -80,40 +117,11 @@
 					<input type='checkbox' value="keto" name="random" id="keto">
 				  	<label class="random-recipe" for="keto">
 								 Keto </label> <BR>
-            		<button type='submit' id="random-search-submit">submit</button>
+            		<button type='submit' id="random-search-submit">Search</button>
 			</form>
 		</div>
 
-		<!--Turn this into a drop down-->
-		<div id="search-by-wine" class="hidden-wine">
-			<form id="wine-search">
-				<h3>Find a Wine</h3>
-					<h4>White Wine</h4>
-				  	<input type='radio' value="riesling" class='wine-label' name="wine">Riesling</label><br/>
-				  	<input type='radio' value="Pinotgris" class='wine-label' name="wine">Pinot Gris</label><br/>
-				  	<input type='radio' value="Sauvignonblanc" class='wine-label' name="wine">Sauvignon Blanc</label><br/>
-				  	<input type='radio' value="chardonnay" class='wine-label' name="wine">Chardonnay</label><br/>
-
-				  	<!--Reds-->
-				  	<h4>Red Wine</h4>
-
-				  	<input type='radio' value="Pinot Noir" class='wine-label' name="wine">Pinot Noir</label><br/>
-				  	<input type='radio' value="zinfandel" class='wine-label' name="wine">Zinfandel</label><br/>
-				  	<input type='radio' value="syrah" class='wine-label' name="wine">Syrah</label><br/>
-				  	<input type='radio' value="cabernetsauvignon" class='wine-label' name="wine">Cabernet Sauvignon</label><br/>
-
-				  	<h4>Other Wines</h4>
-				  	<!--other-->
-				  	<input type='radio' value="sparklingwine" class='wine-label' name="wine">Sparkling Wine</label><br/>
-				  	<input type='radio' value="rose" class='wine-label' name="wine">Rose</label><br/>
-
-				  	<!--Nice to add feature: wine price max-->
-			
-            		<button type='submit' id="wine-search-button">submit</button>
-
-            		
-			</form>
-		</div>
+	
 
 
 
@@ -127,6 +135,6 @@
 
 	<footer>
 	</footer>
-
+</div>
 </body>
 </html>

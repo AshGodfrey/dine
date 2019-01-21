@@ -2,8 +2,8 @@
 function displayRandom(result) {
 	console.log(result.recipes[0]);
 	$('.results').removeClass('hidden');
-  //$('#search-by-wine').removeClass('hidden-wine');
-	$('#random-results').append(`<h4>${result.recipes[0].title}</h4>
+  $('#search-by-wine').removeClass('hidden-wine');
+	$('.random-results').append(`<h4>${result.recipes[0].title}</h4>
 		<img src="${result.recipes[0].image}" class="results-img"><br>
     <p><a href="${result.recipes[0].sourceUrl}">Read detailed instructions at "${result.recipes[0].sourceName}."</a>`)
 	//analyzed instructions + ingredients
@@ -22,7 +22,7 @@ function displayWine(result) {
 
 
 function appendWineHTML(wine){
-  $('#wine-results').append(`<h4>${wine.title}</h4><img src="${wine.imageUrl}"><p>${wine.description}</p><p>Price: ${wine.price}</p>`)
+  $('#wine-results').append(`<h4>${wine.title}</h4><img src="${wine.imageUrl}" class="wine-img"><p>${wine.description}</p><p>Price: ${wine.price}</p>`)
 }
 
 
@@ -51,7 +51,7 @@ function searchStandard() {
 }
 
 function searchWine() {
-	let wine = $("input[name='wine']:checked").val();
+	let wine = $("#wine-type option:selected").val();
 
 	$.ajax({ 
    type : "GET", 
@@ -107,6 +107,7 @@ function submitRandomForm() {
     $('#param-search-button').addClass('hidden')
     $('#random-search-button').addClass('hidden')
     $('#search-by-random').addClass('hidden')
+    $('#main-paragraph').addClass('hidden')
   });
 }
 
@@ -148,7 +149,20 @@ $('#random-search-button').click(event => {
   }
 })
 
+$('#wine-search-expand').click(event => {
+  if ($(this).attr('aria-expanded') == 'true')  {
+     $("#search-by-wine").removeClass('hidden')
+   $(this).attr('aria-expanded', 'true')
+   
+  } else {
+    $(this).attr('aria-expanded', 'false');
+    $("#search-by-wine").addClass('hidden')
+  }
+})
 
+$('#search-again').click (event => {
+  location.reload()
+})
 
 
 //Run the app

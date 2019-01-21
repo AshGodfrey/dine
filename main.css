@@ -1,15 +1,52 @@
 
 body {
-	background-color: white;
+	background-image: url('apples.png');
+	background-size: 1000px;
 	margin: auto;
-    width: 70%;
     border-radius: 5px;
     padding-top: 40px;
     margin-top: 10px;
     margin-bottom: 10px;
-    min-width: 250px;
-    font-family: 'Noto Sans', sans-serif;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
     max-width: 500px;
+}
+
+#main {
+	padding: 10%;
+	border-radius: 3px;
+}
+
+h1 {
+	font-family: 'Dancing Script', cursive;
+	font-size: 50px;
+	margin: 0px;
+	text-shadow: 2px 2px 4px #000000;
+	color: white;
+}
+
+h2 {
+	margin: 0px;
+	font-size: 25px;
+	color: white;
+	text-shadow: 2px 2px 4px #000000;
+}
+
+h4 {
+	margin: 0px;
+	font-size: 25px;
+	text-align: center;
+}
+
+p {
+	font-size: 16px;
+	color: black;
+}
+
+.white {
+	background-color: white;
+	padding: 10px;
+	border-radius: 3px;
 }
 
 /*search buttons*/
@@ -18,11 +55,14 @@ body {
 	margin: 0 auto;
 	width: 100%;
 	height: 50px;
-	background-color: gray;
+	background-color: #A07178;
+	color: white;
+	font-family: 'Dancing Script', cursive;
+	font-size: 25px;
 	-webkit-appearance: none;
 	border: 0px;
 	margin-top: 10px;
-	border-radius: 3px;
+	border:radius 3px;
 }
 
 /*search checkbox*/
@@ -33,24 +73,21 @@ input[type=checkbox]{
 
 .random-recipe {
 	display: inline;
-	background: gray;
-	padding: 10px;
-	border-radius:3px;
-	height: 20px;
-	outline:none;
-	vertical-align: center;
-	padding-top: 10px;
+	background-color: #537D8D;
+	border-radius: 3px;
+	padding: 5px;
+	color: white;
 }
 
 .random-recipe:hover {
-	background: #706656;
-	color: #efe5d5;
+	background: #271F30;
+	color: white;
 }
 
 
 input[type=checkbox]:checked+label {
-  background: #706656;
-  color: #efe5d5;
+  background: #271F30;
+  color: white;
 }
 
 label {
@@ -76,21 +113,34 @@ label {
 
 
 /*searches*/
-#random-results {
-	background-color: gray;
+.random-results, .results {
+	background-color: white;
 	padding: 4%;
 	border-radius:5px;
+	margin-top: 10%;
 }
 
 #random-search-submit {
 	margin-top: 20px;
 	-webkit-appearance: none;
-	border: 0px;
-	height: 30px;
-	background-color: gray;
 	border-radius: 3px;
-	padding: 10px;
+	display: block;
+	height: 35px;
+	width: 95%;
+	margin-left: 10px;
+	background-color: #AC3931;
+	color: white;
+	font-size: 16px;
+	-webkit-appearance: none;
+	border: 0px;
+	margin-top: 15px;
+	border:radius 3px;
 	
+}
+
+#random-search-submit:hover {
+	background: #A07178;
+	color: white;
 }
 
 
@@ -98,8 +148,27 @@ label {
 /*results*/
 .results-img {
 	width: 75%;
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
 }
 
+.wine-img {
+	max-height: 300px;
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+
+/*media queries*/
+@media only screen and (min-width: 1000px) {
+	body {
+		background-size: 100%;
+	}
+}
 
 
 
