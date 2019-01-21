@@ -28,7 +28,7 @@ function appendWineHTML(wine){
 }
 
 function appendParam(food){
-  $('#param-results').append(`<h4>${food.title}</h4><img src="${food.image}" class="results-img"></p>`)
+  $('#param-results').append(`<h4>${food.title}</h4><img src="${food.image}" class="results-img"> <p><a href="${food.sourceUrl}">Read detailed instructions at "${food.sourceName}.</p>`)
 }
 
 
