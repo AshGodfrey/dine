@@ -1,1 +1,15 @@
+# Dine.
+Link to live app: 
+https://inertiawhoosh.github.io/food-and-wine-app/
 
+Repo: 
+https://github.com/inertiawhoosh/food-and-wine-app
+
+# Summary
+Dine. allows users to search for a recipe either based on search terms of their choosing, or by selecting a random recipe. After finding a recipe users will be asked if they would like to search for wine. That feature will provide the user with 3 wine options, including price.
+
+# Technology Used
+HTML/CSS
+JavaScript
+JQuery
+Spoonacular API - https://rapidapi.com/spoonacular/api/recipe-food-nutrition
