@@ -110,8 +110,8 @@ function searchWine() {
    error : function(result) { 
    	alert("there's an error")
    } 
-});
-}
+  });
+};
 
 
 function buildQueryArg() {
@@ -119,7 +119,7 @@ function buildQueryArg() {
 	//loop through elements and build tags array with string value
 	$("#random-search-button").click(function(){
 	});
-}
+};
 
 function buildTags(){
   var tags = [];
@@ -127,7 +127,7 @@ function buildTags(){
     tags.push($(this).val());
   });
   return tags
-}
+};
 
 function returnArg(tags){
 	var arg = ""
@@ -138,7 +138,7 @@ function returnArg(tags){
 		}
 	}
 	return arg
-}
+};
 
 
 
@@ -184,7 +184,7 @@ $('#param-search-button').click(event => {
     $("#search-by-params").removeClass('hidden')
    $(this).attr('aria-expanded', 'true')
   }
-})
+});
 
 $('#random-search-button').click(event => {
   if ($(this).attr('aria-expanded') == 'true')  {
@@ -194,7 +194,7 @@ $('#random-search-button').click(event => {
     $("#search-by-random").removeClass('hidden')
    $(this).attr('aria-expanded', 'true')
   }
-})
+});
 
 $('#wine-search-expand').click(event => {
   if ($(this).attr('aria-expanded') == 'true')  {
@@ -205,11 +205,11 @@ $('#wine-search-expand').click(event => {
     $(this).attr('aria-expanded', 'false');
     $("#search-by-wine").addClass('hidden')
   }
-})
+});
 
 $('#search-again').click (event => {
   location.reload()
-})
+});
 
 
 //Run the app
