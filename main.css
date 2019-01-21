@@ -162,6 +162,13 @@ label {
 
 }
 
+#num-of-results { 
+   border: 0px;
+   border-radius: 0px;
+   height: 20px;
+   width: 40px;
+}
+
 
 /*media queries*/
 @media only screen and (min-width: 1000px) {

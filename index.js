@@ -5,7 +5,7 @@ function displayRandom(result) {
 	$('.random-results').append(`<h4>${result.recipes[0].title}</h4>
 		<img src="${result.recipes[0].image}" class="results-img"><br>
     <p><a href="${result.recipes[0].sourceUrl}">Read detailed instructions at "${result.recipes[0].sourceName}."</a>`)
-	//analyzed instructions + ingredients
+	
 }
 
 function displayParam(result) {
@@ -46,7 +46,8 @@ function searchRandom() {
 
    }, 
    error : function(result) { 
-   	alert("there's an error")
+   $('.results').removeClass('hidden');
+   $('.results').HTML(`<p>There's an error!</p>`)
    } 
 });
 }
