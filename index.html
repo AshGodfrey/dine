@@ -71,7 +71,10 @@
 		<button role="button" aria-pressed="false" id="param-search-button" class="search-button">Search for Recipes</button> </h3> 
 		<div id="search-by-params"  class="hidden white">
 				<form id="param-search">
-					Choose a Type:
+					Keyword (required):
+					<input type="text" id="keyword" placeholder="salad, steak, burger">
+
+					<!--Choose a Type:
 					<select name="Type">
 						  <option value="main+course">Main</option>
 						  <option value="side+dish">Side Dish</option>
@@ -82,9 +85,9 @@
 						  <option value="Soup">Soup</option>
 					</select>
 
-					<!--African, chinese, japanese, korean, vietnamese, thai, indian, british, irish, french, italian, mexican, spanish, middle eastern, jewish, american, cajun, southern, greek, german, nordic, eastern european, caribbean, or latin american.-->
+					African, chinese, japanese, korean, vietnamese, thai, indian, british, irish, french, italian, mexican, spanish, middle eastern, jewish, american, cajun, southern, greek, german, nordic, eastern european, caribbean, or latin american.
 
-					<!--pescetarian, vegan, and vegetarian.-->
+					pescetarian, vegan, and vegetarian.
 					Dietary Restriction: 
 					<select name="restriction">
 						  <option value="pescetarian">Pescetarian</option>
@@ -94,12 +97,20 @@
 						  <option value="halal">Halal</option>
 					</select>
 
-					<!--exclude (textbox): dairy, egg, gluten, peanut, sesame, seafood, shellfish, soy, sulfite, tree nut, and wheat.-->
+					exclude (textbox): dairy, egg, gluten, peanut, sesame, seafood, shellfish, soy, sulfite, tree nut, and wheat.
 					Intolerances, and allergies:
 					<input type="text" placeholder="e.g. shellfish, tree nut">
 
-					<!--number of results-->
-				<button type='submit' id="param-search-button">submit</button>
+					number of results-->
+					Select Max Number of Results: 
+					<select name="Type" id="num-of-results">
+						  <option value="5">5</option>
+						  <option value="10">10</option>
+						  <option value="15">15</option>
+						  <option value="20">20</option>
+						  <option value="25">25</option>
+					</select>
+				<button type='submit' class="search-submit">submit</button>
 				</form>
 			 </div>
 
@@ -117,7 +128,7 @@
 					<input type='checkbox' value="keto" name="random" id="keto">
 				  	<label class="random-recipe" for="keto">
 								 Keto </label> <BR>
-            		<button type='submit' id="random-search-submit">Search</button>
+            		<button type='submit' class="search-submit">Search</button>
 			</form>
 		</div>
 

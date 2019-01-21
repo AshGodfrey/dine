@@ -52,15 +52,15 @@ function searchRandom() {
 }
 
 function searchParam() {
-	//see above for a guide
+	let searchNumber = $('#num-of-results option:selected').val();
+  let query = $('#keyword').val();
   $.ajax({ 
    type : "GET", 
    dataType: "json",
-   url : `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?number=1&offset=0&query=burger"`, 
+   url : `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?number=${searchNumber}&offset=0&instructionsRequired=true&query=${query}"`, 
    beforeSend: function(xhr){xhr.setRequestHeader('X-RapidAPI-Key', 'fbf613818dmsh4d46ff50d583636p1e4b42jsn8c77729e63e4');},
    success : function(result) { 
-      searchID();
-
+        getID(result);
    }, 
    error : function(result) { 
     alert("there's an error")
@@ -68,11 +68,18 @@ function searchParam() {
 });
 }
 
-function searchID(result) {
+//change search param format into ID format
+
+function getID(result) {
+  console.log(JSON.stringify(result))
+  result.results.forEach(identifier => searchID(identifier));
+}
+
+function searchID(identifier) {
   $.ajax({ 
    type : "GET", 
    dataType: "json",
-   url : `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/262682/information`, 
+   url : `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/${identifier.id}/information`, 
    beforeSend: function(xhr){xhr.setRequestHeader('X-RapidAPI-Key', 'fbf613818dmsh4d46ff50d583636p1e4b42jsn8c77729e63e4');},
    success : function(result) { 
        displayParam(result);
@@ -82,7 +89,8 @@ function searchID(result) {
     alert("there's an error")
    } 
 });
-};
+}
+
 
 
 function searchWine() {

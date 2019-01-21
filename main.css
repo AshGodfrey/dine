@@ -120,7 +120,7 @@ label {
 	margin-top: 10%;
 }
 
-#random-search-submit {
+.search-submit {
 	margin-top: 20px;
 	-webkit-appearance: none;
 	border-radius: 3px;
