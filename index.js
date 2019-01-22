@@ -151,6 +151,8 @@ function submitRandomForm() {
     $('#random-search-button').addClass('hidden')
     $('#search-by-random').addClass('hidden')
     $('#main-paragraph').addClass('hidden')
+    $("#search-by-params").addClass('hidden')
+    $("#search-by-random").addClass('hidden')
   });
 }
 
@@ -162,7 +164,8 @@ function submitSearch() {
     $('#random-search-button').addClass('hidden')
     $('#search-by-params').addClass('hidden')
     $('#main-paragraph').addClass('hidden')
-
+    $("#search-by-params").addClass('hidden')
+    $("#search-by-random").addClass('hidden')
   });
 }
 
