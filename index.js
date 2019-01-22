@@ -61,7 +61,13 @@ function searchParam() {
    url : `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?number=${searchNumber}&offset=0&instructionsRequired=true&query=${query}"`, 
    beforeSend: function(xhr){xhr.setRequestHeader('X-RapidAPI-Key', 'fbf613818dmsh4d46ff50d583636p1e4b42jsn8c77729e63e4');},
    success : function(result) { 
+      if (result.totalResults == 0) {
+      $('.results').removeClass('hidden');
+      $('#param-results').append(`<section role="status"><h4>No Results Found</h4> <BR>
+        Your search returned no results! Try again?</p></section>`)
+      } else {
         getID(result);
+      }
    }, 
    error : function(result) { 
     alert("there's an error")
