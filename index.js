@@ -13,7 +13,6 @@ function displayParam(result) {
   console.log(JSON.stringify(result));
    $('.results').removeClass('hidden');
     appendParam(result);
-  //analyzed instructions + ingredients
 }
 
 function displayWine(result) {
@@ -47,7 +46,8 @@ function searchRandom() {
    }, 
    error : function(result) { 
    $('.results').removeClass('hidden');
-   $('.results').HTML(`<p>There's an error!</p>`)
+   $('#param-results').append(`<section role="status"><h4>No Results Found</h4> <BR>
+    Your search returned no results! Try again?</p></section>`)
    } 
 });
 }
@@ -151,8 +151,6 @@ function submitRandomForm() {
     $('#random-search-button').addClass('hidden')
     $('#search-by-random').addClass('hidden')
     $('#main-paragraph').addClass('hidden')
-    $('body').css("background-image","none")
-    $('body').css("background-color","#5A7D7C")
   });
 }
 
@@ -164,9 +162,7 @@ function submitSearch() {
     $('#random-search-button').addClass('hidden')
     $('#search-by-params').addClass('hidden')
     $('#main-paragraph').addClass('hidden')
-    $('body').css("background-image","none")
-    $('body').css("background-color","#5A7D7C")
-    
+
   });
 }
 

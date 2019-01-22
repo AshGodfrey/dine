@@ -1,6 +1,8 @@
 
 body {
 	background-image: url('apples.png');
+	background-repeat: no-repeat;
+  	background-attachment: fixed;
 	background-size: 1000px;
 	margin: auto;
     border-radius: 5px;
@@ -174,9 +176,7 @@ label {
    border-radius: 0px;
    height: 20px;
    width: 100px;
-    display:inline-block;
-    margin-left: 15px;       /* This is when the drop down box appears */
-    position: relative;
+
 }
 
 
